@@ -14,7 +14,7 @@ header
 {
     font-family: playfair-display, serif;
     width: 100vw;
-    background-image: url("https://lh3.googleusercontent.com/proxy/l67gUttruoakqS0RsInPafoELy3KbXqgrFV-q3as6yBBgozpUdiwPckfdtSs1TmnMO5ZSZsA7o1pBlhEZJKm6FEK1MmIU8YKpa5HiHxeRDjdeFob0gtxrbiV_15zHZymbYvaoH0zG7Jwu1HE_IyVX8LwgTmItNQ7");
+    background-image: url("https://wallpapercave.com/wp/wp4517546.jpg");
     background-color: rgba(10,186,181, 0.55);
     height: 60px;
     display: flex; /*defines a flex container, says that header is a flex container now*/
@@ -22,4 +22,59 @@ header
     flex-direction: column;
     color: rgb(33, 33, 33);
     line-height: 400%;
+}
+
+.myButton {
+    margin-top: 5px;
+    margin-bottom: 15px;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #0ABAB5 5%, #0ABAB5 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #0ABAB5 5%, #0ABAB5 100%);
+	background-color:#0ABAB5;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+img {
+    max-height: 300px;
+    max-width: 600px;
+    border: 0px;
+    border-color: white;
+}
+
+.firstimg {
+    margin-top: -10px;
+    height: 60px;
+    /*width: 20%;*/
+    position: relative;
+    display: flex;
+    left: 32%;
+    align-items: left;
+    margin-bottom: 10px;
+}
+
+.secondimg {
+    margin-top: 10px;
+    height: 75px;
+    position: relative;
+    display: flex;
+    left: 50%;
+    align-items: right;
+    margin-bottom: 0px;
 }

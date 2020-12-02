@@ -8,16 +8,7 @@ function Home(){
             <TopBar title="Home"/>
             <nav>
                 <p>
-                    <Link to="/">Home</Link>
-                </p>
-                <p>
-                    <Link to="/mnist">MNIST</Link>
-                </p>
-                <p>
-                    <Link to="/gpt2">GPT2</Link>
-                </p>
-                <p>
-                    <Link to="/emotion">Spotify Playlist Generator</Link>
+                    <a href="/emotion" class="myButton">Get Playlist</a>
                 </p>
             </nav>
         </div>
