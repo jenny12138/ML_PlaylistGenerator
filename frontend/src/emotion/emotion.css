@@ -1,0 +1,25 @@
+* 
+{
+    /*
+    padding: 0;
+    margin: 0;
+    font-family: playfair-display, serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+    */
+}
+
+header 
+{
+    font-family: playfair-display, serif;
+    width: 100vw;
+    background-image: url("https://lh3.googleusercontent.com/proxy/l67gUttruoakqS0RsInPafoELy3KbXqgrFV-q3as6yBBgozpUdiwPckfdtSs1TmnMO5ZSZsA7o1pBlhEZJKm6FEK1MmIU8YKpa5HiHxeRDjdeFob0gtxrbiV_15zHZymbYvaoH0zG7Jwu1HE_IyVX8LwgTmItNQ7");
+    background-color: rgba(10,186,181, 0.55);
+    height: 60px;
+    display: flex; /*defines a flex container, says that header is a flex container now*/
+    position: relative;
+    flex-direction: column;
+    color: rgb(33, 33, 33);
+    line-height: 400%;
+}
