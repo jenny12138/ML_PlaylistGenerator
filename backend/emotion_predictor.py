@@ -33,7 +33,8 @@ def preprocess_img(image):
     image.save('temp_storage/temp.jpeg')
     return image
 
-#######
+
+##This function (crop_face) is from: https://www.digitalocean.com/community/tutorials/how-to-detect-and-extract-faces-from-an-image-with-opencv-and-python
 def crop_face(): #Stores the cropped face in temp_storage/cropped_face.jpg
     image = cv2.imread('temp_storage/temp.jpeg')
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -51,6 +52,13 @@ def crop_face(): #Stores the cropped face in temp_storage/cropped_face.jpg
         roi_color = image[y:y + h, x:x + w]
         print("[INFO] Object found. Saving locally.")
         cv2.imwrite('temp_storage/cropped_face.jpg', roi_color)
+    
+    if (len(faces) < 1):
+        return -2
+    elif (len(faces) > 1):
+        return 1
+    else:
+        return 0
 
 #######
 def crop_center(pil_img, crop_width, crop_height):
@@ -69,12 +77,19 @@ class Emotion_predictor:
         This method reads the file uploaded from the Flask application POST request,
         and performs a prediction using the Emotion detection model.
         """
+
         emotions = ["Angry", "Neutral", "Surprise", "Happy", "Sad"] #Holds the five emotions
 
         f = request.files['image'] #<class 'werkzeug.datastructures.FileStorage'>
         image = Image.open(f) #<class 'PIL.JpegImagePlugin.JpegImageFile'>
         image = preprocess_img(image) #<class 'PIL.Image.Image'>
-        crop_face() ##tores the cropped face in temp_storage/cropped_face.jpg
+        face_found = crop_face() ##stores the cropped face in temp_storage/cropped_face.jpg
+        print(face_found)
+        
+        if (face_found == -2):
+            return -2
+        elif (face_found == 1):
+            return 1
 
         image = Image.open('temp_storage/cropped_face.jpg')
         image = crop_center(image, min(image.width, image.height), min(image.width, image.height)) #Crops into a square
