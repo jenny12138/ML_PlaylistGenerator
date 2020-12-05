@@ -33,7 +33,7 @@ def preprocess_img(image):
     image.save('temp_storage/temp.jpeg')
     return image
 
-#######
+#Function from: https://www.digitalocean.com/community/tutorials/how-to-detect-and-extract-faces-from-an-image-with-opencv-and-python
 def crop_face(): #Stores the cropped face in temp_storage/cropped_face.jpg
     image = cv2.imread('temp_storage/temp.jpeg')
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
