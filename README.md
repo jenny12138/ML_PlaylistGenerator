@@ -2,7 +2,7 @@
 
 Final project for McGill AI Society Intro to ML Bootcamp (Fall 2020).
 
-Link to CNN model: https://github.com/jenny12138/Facial_Expression_Emoji
+Link to CNN model: https://github.com/jenny12138/EmotionClassifier
 
 ## Project Description
 
