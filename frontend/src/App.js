@@ -3,9 +3,7 @@ import './App.css';
 import React, {useState} from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import Mnist from './mnist/mnist';
 import Home from './home/home';
-import GPT2 from './gpt2/gpt2';
 import EMOTION from './emotion/emotion';
 import TopBar from './topbar/topbar';
 
@@ -17,8 +15,8 @@ function App() {
   const submitForm = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("image", selectedFile);
-    axios.post('/predict/image', formData)
+    formData.append("emotion", selectedFile);
+    axios.post('/predict/emotion', formData)
     .then(res => {
       setPrediction(res.data)
     })
@@ -37,14 +35,6 @@ function App() {
     <Router>
       <div className="App">
       <Switch>
-        <Route path="/mnist">
-          <TopBar title="MNIST"/>
-          <Mnist/>
-        </Route>
-        <Route path="/gpt2">
-          <TopBar title="GPT2"/>
-          <GPT2/>
-        </Route>
         <Route path="/emotion">
           <TopBar title="Spotify Playlist Generator"/>
           <EMOTION/> 
