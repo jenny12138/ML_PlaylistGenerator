@@ -32,6 +32,58 @@ function EMOTION() {
     
   }
 
+  if (prediction == -2)
+  {
+    return (
+      <div className="main-div">
+
+      <img src="https://i.imgur.com/zsGTHQ4.png" title="source: imgur.com" class="firstimg" />
+
+      <form onSubmit={e => submitForm(e)} >
+        <input 
+          type="file"
+          class = "img"
+          onChange={e => setFileAndImage(e.target.files[0])}
+        /> <br/>
+        <img src="https://i.imgur.com/rdNuY4q.png" title="source: imgur.com" class="secondimg" />
+        <button type="submit" class = "myButton">
+          Get Spotify Playlist!
+        </button>
+      </form>
+
+      <img src={image}>
+      </img>
+      <p>{prediction == -1 ? "Please upload a selfie to get a playlist corresponding to your emotion!" : `No face detected in this selfie. Please try a different image.`}</p>
+      </div>
+    );
+  }
+
+  if (prediction == 1)
+  {
+    return (
+      <div className="main-div">
+
+      <img src="https://i.imgur.com/zsGTHQ4.png" title="source: imgur.com" class="firstimg" />
+
+      <form onSubmit={e => submitForm(e)} >
+        <input 
+          type="file"
+          class = "img"
+          onChange={e => setFileAndImage(e.target.files[0])}
+        /> <br/>
+        <img src="https://i.imgur.com/rdNuY4q.png" title="source: imgur.com" class="secondimg" />
+        <button type="submit" class = "myButton">
+          Get Spotify Playlist!
+        </button>
+      </form>
+
+      <img src={image}>
+      </img>
+      <p>{prediction == -1 ? "Please upload a selfie to get a playlist corresponding to your emotion!" : `More than one face was detected in this selfie. Please try a different image.`}</p>
+      </div>
+    );
+  }
+
   if (prediction == "Happy")
   {
     return (
