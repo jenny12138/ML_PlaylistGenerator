@@ -13,7 +13,7 @@ After uploading a selfie, the Spotify Playlist Generator determines the emotion 
 Run the following command from the backend directory:
 
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 python web_app.py
 ```
 
